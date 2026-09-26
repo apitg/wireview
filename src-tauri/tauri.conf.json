@@ -16,6 +16,6 @@
   "bundle": {
     "active": true,
     "targets": ["appimage", "nsis"],
-    "icon": []
+    "icon": ["icons/icon.png"]
   }
 }
