@@ -41,7 +41,7 @@ jobs:
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Force -Path src-tauri\WebView2Runtime | Out-Null
-          Invoke-WebRequest -Uri "https://www.nuget.org/api/v2/package/Microsoft.Web.WebView2.FixedVersionRuntime.win-x64/128.0.2739.42" -OutFile webview2.nupkg
+          Invoke-WebRequest -Uri "https://api.nuget.org/v3-flatcontainer/webview2.runtime.x64/154.0.4258.37/webview2.runtime.x64.154.0.4258.37.nupkg" -OutFile webview2.nupkg
           Expand-Archive -Path webview2.nupkg -DestinationPath webview2-package -Force
           $runtime = Get-ChildItem webview2-package -Recurse -Filter msedgewebview2.exe | Select-Object -First 1
           if (-not $runtime) { throw "Fixed WebView2 runtime was not found in the package." }
